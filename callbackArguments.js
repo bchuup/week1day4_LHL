@@ -1,16 +1,16 @@
+// forEach exercise
+
 // ie. "Found Waldo at index 3!".
 // The second argument/parameter is expected to be a function
 function findWaldo(arr, found) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] == "Waldo") {
-      var position = i + 1;
-      found(position);   // execute callback
+  arr.forEach(function(name, index){
+    if (name == "Waldo"){
+      found(index)
     }
-  }
+  })
 }
-
-function actionWhenFound(position) {
-  console.log("Found Waldo at index:", position);
+function actionWhenFound(index) {
+  console.log("Found Waldo at index:", index)
 }
 
 findWaldo(["Alice", "Bob", "Harry", "Waldo", "Winston"], actionWhenFound);
